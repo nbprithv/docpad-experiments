@@ -1,0 +1,33 @@
+{{> header}}
+  <div class="message center {{successclass}}">
+    {{ressuccess}}
+  </div>
+  <div class="pure-u-1-1 content">
+  <form class="pure-form pure-form-aligned" method="post" action="/item/submit/" enctype="multipart/form-data">
+    <fieldset>
+        <legend>
+          <p>Create an item in <b>{{ categoryname }}</b></p>
+        </legend> 
+
+        <div class="pure-control-group">
+          <label for="itemname">Enter Item name</label>
+          <input id="itemname" name="itemname" type="text" placeholder="Item name">
+        </div>
+
+        <div class="pure-control-group">
+          <label for="itemprice">Enter Item price</label>
+          <input id="itemprice" name="itemprice" type="text" placeholder="Item price in USD">
+        </div>
+
+        <div class="pure-control-group">
+          <label for="itemimage" class="pure-file">Upload an image</label>
+          <input id="itemimage" name="itemimage" type="file">
+        </div>
+        <input type="hidden" name="categoryname" id="categoryname" value="{{ categoryname }}" />
+        <input type="hidden" name="themetype" value="{{themetype}}" id="themetype"/>
+        <input type="submit" class="pure-button pure-button-primary" value="Submit"/>
+    </fieldset>
+  </form>
+  </div>
+
+{{> footer}}

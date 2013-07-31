@@ -1,0 +1,30 @@
+---
+title: {%categoryname%}
+layout: category
+pageOrder: 2
+tags: ['category','{%categoryname%}']
+---
+<style>
+  article {
+    background-color:{%theme-bgcolor%};
+    color:{%theme-color%};
+  }
+</style>
+<div class="pure-u-1-1">
+  <nav class="linklist">
+    <% for document in @getCollection('items').toJSON(): %>
+      <%if document.tags[0] == '{%categoryname%}': %>      
+        <li class="category-items-grid pure-u-1-5">        
+          <a href="<%= document.url %>">
+            <img src="<%= document.image %>" />
+            <aside>
+                <%= document.title %>
+                <span class="price"> $<%= document.price %></span>
+            </aside>
+          </a>
+        </li>
+      <% end %>
+    <% end %>
+  </nav>
+</div>
+<div style="clear:both"></div>

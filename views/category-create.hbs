@@ -1,0 +1,19 @@
+{{> header}}
+
+  <div class="pure-u-1-1 content">
+  <form class="pure-form pure-form-stacked" method="post" action="/item/create/">
+    <fieldset>
+        <legend>
+          <p>Create a category</p>
+          <p>Use this to create categories for your store. This helps in organizing your items better.</p>
+        </legend> 
+
+        <label for="email">Enter a name for your category</label>
+        <input id="categoryname" name="categoryname" type="text" placeholder="Category name">
+        <input type="hidden" name="themetype" value="{{themetype}}" id="themetype"/>
+        <input type="submit" class="pure-button pure-button-primary" value="Submit" />
+    </fieldset>
+  </form>
+  </div>
+
+{{> footer}}

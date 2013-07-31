@@ -1,0 +1,19 @@
+---
+title: chargers
+layout: category
+pageOrder: 2
+tags: ['category','chargers']
+---
+
+<nav class="linklist">
+  <% for document in @getCollection('items').toJSON(): %>
+    <%if document.tags[0] == 'chargers': %>      
+      <li class="category-items-grid">        
+        <img src="<%= document.image %>" /><br>
+        <a href="<%= document.url %>"><%= document.title %></a>
+        <div class="price"><%= document.price %></div>
+      </li>
+    <% end %>
+  <% end %>
+</nav>
+<div style="clear:both"></div>
